@@ -48,6 +48,11 @@ class AppListAdapter(var apps: ArrayList<PackageAppInfo>, private val selectedAp
         }
     }
 
+    fun updateList(newList: List<PackageAppInfo>) {
+        apps = ArrayList(newList)
+        notifyDataSetChanged()
+    }
+
     class ParentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ivIcon: ImageView? = itemView.findViewById<ImageView>(R.id.ivSelectedAppIcon)
         val tvNameOfApp: TextView? = itemView.findViewById<TextView>(R.id.tvNameOfApp)

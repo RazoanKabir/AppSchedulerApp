@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".view.AddAppActivity">
+    tools:context=".views.AppListActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -62,10 +62,38 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <RelativeLayout
-        android:id="@+id/rlAppList"
+        android:id="@+id/rlSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/appBarLayout"
+        android:padding="@dimen/_5sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/search_bg"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:hint="Search apps..."
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/_6sdp"
+            android:padding="@dimen/_10sdp"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_12sdp"
+            android:inputType="text"
+            android:imeOptions="actionSearch"/>
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/rlAppList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlSearch"
         android:paddingTop="@dimen/_16sdp"
         android:background="@color/white"
         android:visibility="gone">
@@ -88,6 +116,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:indeterminate="true"
-        android:padding="@dimen/_24sdp" />
+        android:padding="@dimen/_24sdp"
+        android:visibility="visible"/>
 
 </RelativeLayout>
